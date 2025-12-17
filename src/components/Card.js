@@ -1,10 +1,20 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, useColorScheme} from 'react-native';
 
 const Card = ({title, children, style}) => {
+  const isDarkMode = useColorScheme() === 'dark';
+
+  const cardStyle = {
+    backgroundColor: isDarkMode ? '#2a2a2a' : '#ffffff',
+  };
+
+  const titleStyle = {
+    color: isDarkMode ? '#ffffff' : '#333333',
+  };
+
   return (
-    <View style={[styles.card, style]}>
-      {title && <Text style={styles.title}>{title}</Text>}
+    <View style={[styles.card, cardStyle, style]}>
+      {title && <Text style={[styles.title, titleStyle]}>{title}</Text>}
       <View style={styles.content}>{children}</View>
     </View>
   );
@@ -12,7 +22,6 @@ const Card = ({title, children, style}) => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#ffffff',
     borderRadius: 12,
     padding: 16,
     marginVertical: 8,
@@ -29,7 +38,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
     marginBottom: 12,
-    color: '#333333',
   },
   content: {
     width: '100%',

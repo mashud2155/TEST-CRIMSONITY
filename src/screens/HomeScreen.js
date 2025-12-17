@@ -21,6 +21,10 @@ const HomeScreen = () => {
     color: isDarkMode ? '#ffffff' : '#000000',
   };
 
+  const cardTextStyle = {
+    color: isDarkMode ? '#cccccc' : '#555555',
+  };
+
   const handleGetStarted = () => {
     console.log('Get Started button pressed');
   };
@@ -37,14 +41,14 @@ const HomeScreen = () => {
           </Text>
 
           <Card title="Welcome" style={styles.card}>
-            <Text style={styles.cardText}>
+            <Text style={[styles.cardText, cardTextStyle]}>
               This is a starter template for your React Native mobile
               application. Start building amazing mobile experiences!
             </Text>
           </Card>
 
           <Card title="Features" style={styles.card}>
-            <Text style={styles.cardText}>
+            <Text style={[styles.cardText, cardTextStyle]}>
               • Cross-platform support (iOS & Android){'\n'}
               • Modern React Native architecture{'\n'}
               • Reusable components{'\n'}
@@ -86,7 +90,6 @@ const styles = StyleSheet.create({
   cardText: {
     fontSize: 14,
     lineHeight: 22,
-    color: '#555555',
   },
   buttonContainer: {
     alignItems: 'center',

@@ -1,4 +1,4 @@
-{
-  "name": "CrimsonityMobile",
-  "displayName": "CrimsonityMobile"
-}
+module.exports = {
+  name: 'CrimsonityMobile',
+  displayName: 'CrimsonityMobile',
+};
