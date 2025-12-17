@@ -1,0 +1,4 @@
+{
+  "name": "CrimsonityMobile",
+  "displayName": "CrimsonityMobile"
+}
